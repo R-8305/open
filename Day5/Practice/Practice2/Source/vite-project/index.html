@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <p>Area of circle is:-</p>
+    <input type="number" id="num" value="" >
+    <p id="demo"></p>
+    <button onclick="math()">Check</button>
+
+
+
+
+
+
+    <script type="text/javascript">
+      function math(){
+        var r = document.getElementById("num").value;
+        document.getElementById("demo").innerHTML="Area of circle is :"+" "+Math.PI * r * r;
+        console.log(demo);
+      }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Vite App</title>
+</head>
+<body>
+    <input type="text" name="val" id="val" required class="from-control" placeholder="Enter value">
+    <small id="name" class="text"></small><br>
+    <small id="name1" class="text"></small><br>
+    <input type="button" onclick="valuecheck()" value="submit">
+
+  <script type="text/javascript">
+  let name = document.getElementById("name");
+  let name1 = document.getElementById("name");
+   function reverseStringPromise(input){
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        let inputn = parseInt(input);
+        if(typeof input === 'string' && isNaN(input)){
+          resolve(input.split('').reverse().join(''));
+        }else{
+          reject(input);
+        }
+      },500);
+    })
+   }
+   function valuecheck(){
+    let val = document.getElementById("val").value;
+    reverseStringPromise(val)
+    .then(result =>name.innerHTML= "Reverse string is a:"+result,name.innerHTML="")
+    .catch(result =>name.innerHTML= 'Error:$(error)',name1.innerHTML="");
+   }
+  
+  </script>
+</body>
+
+</html>

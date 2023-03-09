@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Employee Form</h3>
+    <form name="Form" method="get" onsubmit="return false">
+        <table>
+            <tbody class="container">
+                <tr>
+                    <td>
+                        <label> Employee id: </label>
+                    </td>
+                    <td>
+                        <input type="id" name="id" id="id" class="formcontrol" placeholder="000000"
+                            autocomplete="off" />
+                        <br><span id="emid" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Employee name : </label>
+                    </td>
+                    <td>
+                        <input type=" text" id="name" name="uname" class="formcontrol" placeholder="username"
+                            autocomplete="off" />
+                        <br><span id="usrn" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Email id: </label>
+                    </td>
+                    <td>
+                        <input type=" email" name="ename" id="ename" class="formcontrol" autocomplete="off"
+                            placeholder="email@gmail.com" />
+                        <br><span id="email" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="Age">Age: </label></td>
+                    <td> <input type="text" name="num" id="num" autocomplete="off" /> </td>
+                    <br><span id="age" class="text-danger"></span>
+                </tr>
+                <tr>
+                    <td><label>Gender:</label></td>
+                    <td><label><input type="radio" id="gender" name="gender" value="Male" /> Male</label>
+                        <label><input type="radio" id="gender" name="gender" value="Female" />Female</label>
+                        <br> <span id="gen" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label> Designation:</label></td>
+                    <td><select name="desig" class="formcontrol" id="desig" style="padding:6px; width:255px;">
+                            <option value="">--</option>
+                            <option value="software Developer">software Developer</option>
+                            <option value="Software Engineer">Software Engineer</option>
+                            <option value="Full stack Developer">Full stack Developer</option>
+                            <option value="Front-End WebDeveloper">Front-End WebDeveloper</option>
+                            <option value="Back-End WebDeveloper">Back-End WebDeveloper</option>
+                            <option value="Tester Engineer">Tester Engineer</option>
+                            <option value="Software Architect">Software Architect</option>
+                            <br><span id="des" class="text-danger"></span>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td><label> Salary:</label></td>
+                    <td><input type="number" id="sal" name="sale" placeholder="salary" autocomplete="off" />
+                        <br><span id="salary" class="text-danger"></span>
+                </tr>
+                </td>
+
+                <tr>
+                    <td><label> Location:</label></td>
+                    <td>
+                        <select name="location" class="formcontrol" id="location" style="padding:6px; width:255px;">
+                            <option value="">--</option>
+                            <option value="Surat">Surat</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Rajkot">Rajkot</option>
+                            <option value="Somnath">Somnath</option>
+                            <option value="Vadodara">Vadodara</option>
+                            <br><span id="loc" class="text-danger"></span>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Date of joining : </label>
+                    </td>
+                    <td><input type=" date" id="date" name="date" placeholder="MM-DD-YYYY" autocomplete="off" /></td>
+                    <br> <span id="dat" class="text-danger"></span>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label> Contact no.: </label>
+                    </td>
+                    <td><input type="number" id="num1" name="num2" placeholder="000-000-0000" autocomplete="off" /></td>
+                    <br> <span id="cno" class="text-danger"></span>
+
+
+                </tr>
+                <td><button class="btn btn-success" onclick="validation()">Submit</button>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <h5>Customer Details</h5>
+    <table style="width:100%; border-collapse: 1px solid black ;">
+        <thead>
+            <tr>
+                <th>Employee Id</th>
+                <th>Name</th>
+                <th>Email Id</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Designation</th>
+                <th>Salary</th>
+                <th>Location</th>
+                <th>Date of Joining</th>
+                <th>Contact no.</th>
+            </tr>
+        </thead>
+        <tbody id="tbl"></tbody>
+    </table>
+
+
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+
+        function validation() {
+
+            let eid = document.getElementById("id").value;
+            let name = document.getElementById("name").value;
+            let em = document.getElementById("ename").value;
+            let ag = document.getElementById("num").value;
+            let ge = document.getElementById("gender").value;
+            let gen = document.getElementById("gender").value;
+            let dg = document.getElementById("desig").value;
+            let s = document.getElementById("sal").value;
+            let l = document.getElementById("location").value;
+            let doj = document.getElementById("date").value;
+            let cn = document.getElementById("num1").value;
+            var table = `<tr>
+                <td>${eid}</td>
+                <td>${name}</td>
+                <td>${em}</td>
+                <td>${ag}</td>
+                <td>${ge}</td>
+                <td>${dg}</td>
+                <td>${s}</td>
+                <td>${l}</td>
+                <td>${doj}</td>
+                <td>${cn}</td>
+
+               </tr>`;
+            document.getElementById("tbl").innerHTML += table;
+
+            //------Employee id-------//
+            if (eid == "") {
+                document.getElementById("emid").innerHTML = "fill the employee id";
+                return false;
+            }
+            if (eid.length != 5) {
+                document.getElementById("emid").innerHTML = "Id in 5 digit";
+                return false;
+            }
+
+            //-----name------//
+            if (name == "") {
+                document.getElementById("usrn").innerHTML = "Username should be filled";
+                return false;
+            }
+            if (!isNaN(name)) {
+                document.getElementById("usrn").innerHTML = "number not allowed";
+                return false;
+            }
+
+            //------------Email---------//
+            if (em == "") {
+                document.getElementById("email").innerHTML = "Id in 5 digit";
+                return false;
+            }
+            if (em.indexOf('@') <= 0) {
+                document.getElementById("email").innerHTML = "Invalid Position of @!";
+                return false;
+            }
+            if ((em.length - 4 <= '.') && (em.length - 3 <= '.')) {
+                document.getElementById("email").innerHTML = "Email should be proper manner!";
+                return false;
+            }
+
+
+
+            //---------Age----------//
+            if (ag == "") {
+                document.getElementById("age").innerHTML = "Fill Age";
+                return false;
+            }
+            if ((ag <= 18) || (ag >= 65)) {
+                document.getElementById("age").innerHTML = "invalid Age";
+                return false;
+            }
+
+            //------Gender------------//
+            if (ge.checked) {
+                document.getElementById("gender").value
+            }
+            if (gen.checked) {
+                document.getElementById("gender").value
+            }
+           
+
+            //-----designation-----------//
+            if (dg == "") {
+                document.getElementById("des").innerHTML = "Designation should be fill";
+                return false;
+            }
+
+
+            //--------salary--------------//
+            if (s == "") {
+                document.getElementById("salary").innerHTML = "Salary should be filled ";
+                return false;
+            }
+            if (isNaN(s)) {
+                document.getElementById("salary").innerHTML = "Start with the numbers ";
+                return false;
+            }
+
+
+
+
+            //--------location--------//
+            if (l == "") {
+                document.getElementById("loc").innerHTML = "Choose any location";
+                return false;
+            }
+
+
+            //-------DOJ---------// 
+            const a = doj.split("-");
+            if (a[0].length > 2 || a[1].length > 2 || a[2].length > 4) {
+                document.getElementById("dat").innerHTML = "Check Date Again";
+            }
+            else {
+                if (a[0] == 1 || a[0] == 3 || a[0] == 5 || a[0] == 7 || a[0] == 8 || a[0] == 10 || a[0] == 12) {
+                    if (a[2] > 0) {
+                        if (a[1] > 31) {
+                            document.getElementById("dat").innerHTML = "Date is not valid";
+
+                        }
+                        else {
+                            document.getElementById("dat").innerHTML = "Date is not valid";
+                        }
+                    }
+                    else if (a[0] == 4 || a[0] == 6 || a[0] == 9 || a[0] == 11) {
+                        if (a[2] > 0) {
+                            if (a[1] > 30) {
+                                document.getElementById("dat").innerHTML = "Date is not valid";
+                            }
+                        }
+                        else if (a[0] == 2) {
+                            if (a[2] % 400 == 0 || a[2] % 4 == 0) {
+                                if (a[1] > 29) {
+                                    document.getElementById("dat").innerHTML = "Date is not valid";
+                                }
+                                else {
+                                    document.getElementById("dat").innerHTML = "Date is not valid";
+                                }
+                            }
+                            else {
+                                document.getElementById("dat").innerHTML = "Date is not valid";
+                            }
+                        }
+                    }
+                }
+                //-------Contactno---------//
+                if (cn == "") {
+                    document.getElementById("cno").innerHTML = "Fill contact number";
+                    return false;
+                }
+                if (cn.length != 10) {
+                    document.getElementById("cno").innerHTML = "Number should be 10 digit";
+                    return false;
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
